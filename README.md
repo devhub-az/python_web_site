@@ -6,4 +6,4 @@ Web site for Python Community for Azerbaijan developers
 #### Hose1021
 #### akernelpanicv
 #### nasirmovlamov
-#### ch4ki
+#### ch4ki6
