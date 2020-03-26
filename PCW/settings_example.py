@@ -75,12 +75,12 @@ WSGI_APPLICATION = 'PCW.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'DB_NAME',
-        'USER': 'DB_USER',
-        'PASSWORD': 'DB_PASSWORD',
-        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'DB_NAME',  # set your db name
+        'USER': 'DB_USER',  # set your db user
+        'PASSWORD': 'DB_PASSWORD',  # set your password
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
