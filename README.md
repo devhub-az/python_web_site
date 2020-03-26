@@ -10,3 +10,4 @@ Web site for Python Community for Azerbaijan developers
 #### avazabdu
 #### DjangoJunior
 #### Anvarli Orxan
+#### dilaisayeva
