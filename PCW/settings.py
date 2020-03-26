@@ -75,8 +75,12 @@ WSGI_APPLICATION = 'PCW.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'pcw_db',  # set your db name
+        'USER': 'pcw_user',  # set your db user
+        'PASSWORD': '1',  # set your password
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
     }
 }
 
