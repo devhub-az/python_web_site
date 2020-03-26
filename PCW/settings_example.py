@@ -75,11 +75,11 @@ WSGI_APPLICATION = 'PCW.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'DB_NAME',  # set your db name
-        'USER': 'DB_USER',  # set your db user
-        'PASSWORD': 'DB_PASSWORD',  # set your password
-        'HOST': 'localhost',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2', # django.db.backends.postgresql_psycopg2
+        'NAME': 'd18nidrd9ha5rd',  # set your db name
+        'USER': 'gexeqwrwdqvadh',  # set your db user
+        'PASSWORD': '85e66802c6413ccea1dce637114b75ea8fba5fd09c9070d7f89bc8db89e447a9',  # set your password
+        'HOST': 'ec2-54-247-79-178.eu-west-1.compute.amazonaws.com',  # localhost
         'PORT': '5432',
     }
 }
