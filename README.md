@@ -8,3 +8,4 @@ Web site for Python Community for Azerbaijan developers
 #### nasirmovlamov
 #### ch4ki
 #### avazabdu
+#### DjangoJunior
