@@ -2,3 +2,4 @@
 venv/
 
 PCW/__pycache__/
+PCW/settings.py
