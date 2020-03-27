@@ -9,6 +9,7 @@ class Post(models.Model):
     body = models.TextField()
     slug = models.SlugField(unique = True)
     author = models.ForeignKey(User,on_delete=models.CASCADE)
+    likes = models.ManyToManyField(User,blank=True,related_name = 'likes')
     created_at = models.DateTimeField(auto_now_add = True)
     updated_at = models.DateTimeField(auto_now = True)
     updated = models.BooleanField(default = False)
@@ -37,4 +38,7 @@ class Post(models.Model):
 
     def snipped_body(self):
         return self.body[:150] + "..."
+
+    def total_likes(self):
+        return self.likes.count()
 

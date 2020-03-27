@@ -1,6 +1,7 @@
 from django.shortcuts import render,get_object_or_404,redirect,reverse,HttpResponseRedirect
 from .models import Post
 from .forms import PostForm
+from django.http import JsonResponse
 # Create your views here.
 
 
@@ -52,3 +53,26 @@ def post_delete(request,post_slug):
     post.deleted = True
     post.save()
     return redirect('post:post-list')
+
+def post_like(request):
+    id_ = request.GET.get('id')   #comes from fron with ajax
+    post = get_object_or_404(Post, id=id_)
+    user = request.user
+    liked = False
+    likes_count = post.total_likes()
+    if user in post.likes.all():
+        liked = False
+        post.likes.remove(user)
+        likes_count -= 1
+    else:
+        liked = True
+        post.likes.add(user)
+        likes_count += 1
+    # data send to front with ajax
+    data = {
+        "liked": liked,
+        "id_": post.id,
+        'likes_count': likes_count,
+        'unlikes_count': unlikes_count,
+    }
+    return JsonResponse(data)
