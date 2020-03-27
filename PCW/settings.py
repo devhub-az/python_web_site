@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'user',
     'blog',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -48,7 +49,7 @@ ROOT_URLCONF = 'PCW.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['blog/../blog/templates'],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

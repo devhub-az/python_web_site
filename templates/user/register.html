@@ -1,0 +1,21 @@
+
+{% load crispy_forms_tags %}
+
+
+{% block orxan %}
+    <br>
+    <br>
+
+<form method="post">
+{% csrf_token %}
+{{form|crispy}}
+<br>
+<div class="row form-group">
+    <div class="col-md-12">
+      <input type="submit" value="Qeydiyyat" class="btn btn-sm btn-success">
+    </div>
+  </div>
+</form>
+
+
+{% endblock orxan %}
