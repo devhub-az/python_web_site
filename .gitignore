@@ -2,3 +2,7 @@
 venv/
 PCW/__pycache__/
 .env
+blog/__pycache__/
+blog/migrations/__pycache__/
+user/__pycache__/
+user/migrations/__pycache__/
