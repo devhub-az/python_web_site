@@ -73,6 +73,5 @@ def post_like(request):
         "liked": liked,
         "id_": post.id,
         'likes_count': likes_count,
-        'unlikes_count': unlikes_count,
     }
     return JsonResponse(data)
