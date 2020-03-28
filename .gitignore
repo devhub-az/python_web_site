@@ -6,3 +6,6 @@ blog/__pycache__/
 blog/migrations/__pycache__/
 user/__pycache__/
 user/migrations/__pycache__/
+db.sqlite3
+error_pages/__pycache__/
+error_pages/migrations/__pycache__/

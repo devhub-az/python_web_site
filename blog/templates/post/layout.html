@@ -1,0 +1,19 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    {% include "post/include/meta.html" %}
+    <title>{% block tittle %}{% endblock %} | PCW</title>
+
+    <link rel="preload" href="{% static 'js/app.js' %}" as="script">
+    <link rel="stylesheet" href="{% static 'css/app.css' %}" media="print" onload="this.media='all'">
+</head>
+<body>
+    {% include "post/layout/header.html" %}
+    {% block content %}{% endblock %}
+    {% block scripts %}{% endblock %}
+    {% include "post/layout/footer.html" %}
+
+    <script type="text/javascript" src="{% static 'js/app.js' %}" async></script>
+</body>
+</html>
