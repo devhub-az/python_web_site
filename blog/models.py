@@ -1,22 +1,24 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.text import slugify
+
+
 # Create your models here.
 
 
 class Post(models.Model):
-    name = models.CharField(max_length = 191)
+    name = models.CharField(max_length=191)
     body = models.TextField()
-    slug = models.SlugField(unique = True)
-    author = models.ForeignKey(User,on_delete=models.CASCADE)
-    likes = models.ManyToManyField(User,blank=True,related_name = 'likes')
-    created_at = models.DateTimeField(auto_now_add = True)
-    updated_at = models.DateTimeField(auto_now = True)
-    updated = models.BooleanField(default = False)
-    deleted = models.BooleanField(default = False)
+    slug = models.SlugField(unique=True)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    likes = models.ManyToManyField(User, blank=True, related_name='likes')
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    updated = models.BooleanField(default=False)
+    deleted = models.BooleanField(default=False)
 
     def __str__(self):
-        return "%s posted by %s" %(self.name, self.author.username)
+        return "%s posted by %s" % (self.name, self.author.username)
 
     class Meta:
         verbose_name = 'Post'
@@ -41,4 +43,3 @@ class Post(models.Model):
 
     def total_likes(self):
         return self.likes.count()
-

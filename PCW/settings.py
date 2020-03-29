@@ -7,7 +7,6 @@ environ.Env.read_env('.env')
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
@@ -18,7 +17,6 @@ SECRET_KEY = 'sk5pog)0-1vr+c0t0+=y*+$0p$q(i88+*&p##^s_*s_l9j16pg'
 DEBUG = env('DEBUG')
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -31,8 +29,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'user',
     'blog',
-    'error_pages',
-    'crispy_forms',
+    'djangomix',
+    # 'error_pages',
+    # 'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -50,7 +49,7 @@ ROOT_URLCONF = 'PCW.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['blog/templates/templates'],
+        'DIRS': ['blog/templates/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -65,13 +64,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'PCW.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2', # django.db.backends.postgresql_psycopg2
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',  # django.db.backends.postgresql_psycopg2
         'NAME': env.str('DB_NAME'),  # set your db name
         'USER': env.str('DB_USER'),  # set your db user
         'PASSWORD': env.str('DB_PASSWORD'),  # set your password
@@ -79,7 +77,6 @@ DATABASES = {
         'PORT': env.str('DB_PORT'),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -99,7 +96,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
@@ -113,7 +109,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
@@ -122,8 +117,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
-STATIC_ROOT=os.path.join(BASE_DIR,"static_root")
-
+STATIC_ROOT = os.path.join(BASE_DIR, "static_root")
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media_root")

@@ -6,6 +6,9 @@
 
 {% block content %}
     <h1><a href="{% url 'post:post-create' %}">+Create Post</a></h1>
+    <div id="app">
+        <index></index>
+    </div>
     {% for post in posts %}
         {% if post.deleted != True %}
             <div>
