@@ -1,11 +1,11 @@
 let mix = require('laravel-mix');
 
-let staticPath = 'blog/static/'
+let staticPath = 'static'
 let resourcesPath = 'resources'
 
-mix.setResourceRoot('/static/build') // setResroucesRoots add prefix to url() in scss on example: from /images/close.svg to /static/images/close.svg
+mix.setResourceRoot('/static/') // setResroucesRoots add prefix to url() in scss on example: from /images/close.svg to /static/images/close.svg
 
-mix.setPublicPath('blog/static') // Path where mix-manifest.json is created
+mix.setPublicPath('static') // Path where mix-manifest.json is created
 
 // if you don't need browser-sync feature you can remove this lines
 if (process.argv.includes('--browser-sync')) {
