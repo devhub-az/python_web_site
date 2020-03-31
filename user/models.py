@@ -1,18 +1,16 @@
 from django.db import models
+from django.contrib.auth.models import User
 
-# Create your models here.
-
-class Register(models.Model):
-
+class UserProfile(models.Model):
+    user = models.OneToOneField(User,on_delete=models.CASCADE,null=True,blank=False,verbose_name='User')
     avatar = models.FileField(upload_to='avatar',blank = True,null= True,verbose_name='Profile Photo')
-    username = models.CharField(max_length=50,verbose_name='Username')
-    name = models.CharField(max_length=40,verbose_name='Name')
-    surname = models.CharField(max_length=40,verbose_name='Surname')
     about = models.TextField(max_length=1000,verbose_name='About')
-    rating = models.IntegerField(verbose_name='Rating')
-    email = models.EmailField(max_length=80,verbose_name='Email')
-    email_verified = models.DateTimeField(null=True,blank=True)
-    password = models.CharField(max_length=40,verbose_name='Password')
-    remember_token = models.CharField(max_length=50,null=True,blank=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)  
+
+    class Meta:
+        verbose_name_plural = 'User Profile'
+
+    def getAvatar(self):
+        if self.avatar:
+            return self.avatar.url
+        else:
+            return '/static/images/profile_images/default/default.jpg'
