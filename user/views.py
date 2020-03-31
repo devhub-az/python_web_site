@@ -50,5 +50,6 @@ def user_settings(request):
     return render(request,'settings.html',{'form':form})
 
 def password_change(request):
+    pass
 
 
