@@ -18,7 +18,7 @@ def index(request):
 def post_create(request):
     form = PostForm()
     if request.method == 'POST':
-        form = PostForm(request.POST or None)
+        form = PostForm(request.POST or None,request.FILES or None)
         if form.is_valid():
             postForm = form.save(commit=False)
             postForm.author = request.user
@@ -42,7 +42,7 @@ def post_edit(request, post_slug):
     post = get_object_or_404(Post, slug=post_slug)
     form = PostForm(instance=post)
     if request.method == 'POST':
-        form = PostForm(request.POST or None, instance=post)
+        form = PostForm(request.POST or None,request.FILES or None,instance=post)
         if form.is_valid():
             new_form = form.save(commit=False)
             new_form.update = True
@@ -56,7 +56,7 @@ def post_delete(request, post_slug):
     post = get_object_or_404(Post, slug=post_slug)
     post.deleted = True
     post.save()
-    return redirect('post:post-list')
+    return redirect('post:main-page')
 
 
 def post_like(request):

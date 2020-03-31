@@ -4,12 +4,14 @@ from django.utils.text import slugify
 
 
 # Create your models here.
-
+def upload_to(instance,filename):
+    return '%s/%s/%s'%('posts',instance.name,filename)
 
 class Post(models.Model):
     name = models.CharField(max_length=191)
     body = models.TextField()
     slug = models.SlugField(unique=True)
+    image = models.ImageField(upload_to = upload_to,default='',null=True,blank=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     likes = models.ManyToManyField(User, blank=True, related_name='likes')
     created_at = models.DateTimeField(auto_now_add=True)

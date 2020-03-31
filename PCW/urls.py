@@ -23,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('user/', include("user.urls")),
     path('', include('blog.urls')),
+    path('api/',include('api.urls')),
 ]
 
 # Error Pages urls
