@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'user',
     'blog',
     'api',
+    'django_seed',
     'djangomix',
     'rest_framework',
     # 'error_pages',
