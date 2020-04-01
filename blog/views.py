@@ -2,15 +2,18 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse, HttpR
 from .models import Post
 from .forms import PostForm
 from django.http import JsonResponse
-
+from django.core.paginator import Paginator
 
 # Create your views here.
 
 
 def index(request):
     posts = Post.objects.all()
+    paginator = Paginator(posts,10)
+    page = request.GET.get('page')
+    contacts = paginator.get_page(page)
     context = {
-        'posts': posts,
+        'posts': contacts,
     }
     return render(request, 'post/sections/index.html', context)
 
