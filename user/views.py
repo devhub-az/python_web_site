@@ -1,6 +1,6 @@
 from django.shortcuts import render,HttpResponse
-from .forms import RegisterForm,LoginForm,UserProfileUpdateForm
-from django.contrib.auth import authenticate, login ,logout
+from .forms import RegisterForm,LoginForm,UserProfileUpdateForm,UserPasswordChangeForm
+from django.contrib.auth import authenticate, login ,logout,update_session_auth_hash
 from django.contrib import messages
 
 def user_register(request):
@@ -49,7 +49,19 @@ def user_settings(request):
             print('Melumatlarin dogru olduguna emin olun')
     return render(request,'settings.html',{'form':form})
 
-def password_change(request):
-    pass
+def user_password_change(request):
+    form = UserPasswordChangeForm(user= request.user,data= request.POST or None)
+    if form.is_valid():
+        new_password = form.cleaned_data.get('new_password')
+        request.user.set_password(new_password)
+        request.user.save()
+        update_session_auth_hash(request,request.user)
+        print('Burada sizin mesajiniz')
+        return HttpResponse('burada kecid linki')
+    return render(request,'user/password_change.html',{'form':form})
 
+def user_logout(request):
+    logout(request)
+    print('burada sizin mesajiniz')
+    return redirect('index')
 

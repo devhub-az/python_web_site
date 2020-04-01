@@ -64,9 +64,9 @@ class UserPasswordChangeForm(forms.Form):
     new_password = forms.CharField(required=True,min_length=5,label='New Password',widget=forms.PasswordInput(attrs={'class':'form-control'}))
     new_password_confirm = forms.CharField(required=True,min_length=5,label='New Password Confirm',widget=forms.PasswordInput(attrs={'class':'form-control'}))
 
-    def __init__(self, user , *args, **kwargs):
+    def __init__(self, user, *args, **kwargs):
         self.user = user
-        super(UserProfileUpdateForm,self).__init__(*args, **kwargs)
+        super(UserPasswordChangeForm, self).__init__(*args, **kwargs)
 
     def clean(self):
         new_password = self.cleaned_data.get('new_password')
