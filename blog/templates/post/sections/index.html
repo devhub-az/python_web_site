@@ -21,4 +21,21 @@
             <hr>
         {% endif %}
     {% endfor %}
+    <div>
+            <span>
+              {% if posts.has_previous %}
+                <span class="page-item"><a class="page-link" href="?page={{ posts.previous_page_number }}"><i class="fas fa-backward"></i></a></span>
+              {% endif %}
+              {% for i in posts.paginator.page_range %}
+                {% if posts.number == i %}
+                  <span class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></span>
+                {% elif posts.number != i %}
+                  <span class="page-item"><a class="page-link" href="?page={{i}}{% if search %}&search={{search}}{% endif %}">{{i}}</a></span>
+                {% endif %}
+              {% endfor %}
+              {% if posts.has_next %}
+                <span class="page-item"><a href="?page={{ posts.next_page_number }}"><i class="fas fa-forward"></i></a></span>
+              {% endif %}
+            </span>
+    </div>
 {% endblock %}
