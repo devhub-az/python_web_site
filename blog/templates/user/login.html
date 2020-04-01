@@ -1,0 +1,25 @@
+{% load crispy_forms_tags %}
+
+{% block orxan %}
+
+
+
+    {% if request.user.is_authenticated %}
+        <h1>{{ request.user.username }}</h1>
+    {% endif %}
+
+
+<br>
+<form method = 'post'>
+<div class="row form-group">
+    <div class="col-md-12">
+      {% csrf_token %}  
+      {{form|crispy}}
+      <br>
+      <input type="submit" value="Daxil ol" class="btn btn-sm btn-success">
+    </div>
+  </div>
+</form>
+
+
+{% endblock orxan %}

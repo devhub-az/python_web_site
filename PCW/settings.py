@@ -34,7 +34,8 @@ INSTALLED_APPS = [
     'djangomix',
     'rest_framework',
     # 'error_pages',
-    # 'crispy_forms',
+    'crispy_forms',
+
 ]
 
 MIDDLEWARE = [

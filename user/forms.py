@@ -12,6 +12,14 @@ class RegisterForm(forms.ModelForm):
         model = User
         fields = ['first_name', 'last_name','username','email','password','password_confirm']
 
+    def __init__(self, *args, **kwargs):
+        super(RegisterForm, self).__init__(*args, **kwargs)
+        for field in self.fields:
+            self.fields[field].widget.attrs = {'class': 'form-control'}
+        self.fields['first_name'].required = True
+        self.fields['last_name'].required = True
+        self.fields['email'].required = True
+
     def clean(self):
         password = self.cleaned_data.get('password')
         password_confirm = self.cleaned_data.get('password_confirm')
@@ -36,7 +44,8 @@ class LoginForm(forms.Form):
     password = forms.CharField(required=True, label="Password:",widget=forms.PasswordInput(attrs={'class': 'form-control'}))
 
 class UserProfileUpdateForm(forms.ModelForm):
-    avatar = forms.FileField(required=False, label="Avatar", help_text='Şəkil yüklə')
+    username = forms.CharField(max_length=30, min_length=3,label='Username')
+    avatar = forms.ImageField(required=False, label="Avatar", help_text='Şəkil yüklə')
     about = forms.CharField(widget=forms.Textarea, required=False, label="About")
 
     class Meta:
@@ -64,15 +73,15 @@ class UserPasswordChangeForm(forms.Form):
     new_password = forms.CharField(required=True,min_length=5,label='New Password',widget=forms.PasswordInput(attrs={'class':'form-control'}))
     new_password_confirm = forms.CharField(required=True,min_length=5,label='New Password Confirm',widget=forms.PasswordInput(attrs={'class':'form-control'}))
 
-    def __init__(self, user , *args, **kwargs):
+    def __init__(self, user, *args, **kwargs):
         self.user = user
-        super(UserProfileUpdateForm,self).__init__(*args, **kwargs)
+        super(UserPasswordChangeForm, self).__init__(*args, **kwargs)
 
     def clean(self):
         new_password = self.cleaned_data.get('new_password')
         new_password_confirm = self.cleaned_data.get('new_password_confirm')
         if new_password != new_password_confirm:
-            raise forms.ValidationError('Şifrələr uyğun gəlmir')
+            self.add_error("new_password_confirm", 'Yeni şifrələr uygunlaşmadı')
 
     def clean_old_password(self):
         old_password = self.cleaned_data.get('old_password')
