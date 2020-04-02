@@ -4,22 +4,28 @@ from rest_framework.response import Response
 from blog.models import Post
 from .serializers import PostSerializer
 from rest_framework.pagination import PageNumberPagination
+from django.core.paginator import Paginator
 
 # Create your views here.
 
 class CustomPagination(PageNumberPagination):
     page_size = 10
     def get_paginated_response(self, data):
+        posts = Post.objects.all()
+        current_page = int(self.request.GET.get('page',1))
+        paginator = Paginator(posts,self.page_size)
+        from_ = paginator.page(current_page).start_index()
+        to_ = paginator.page(current_page).end_index()
         return Response({
             'count': self.page.paginator.count,
             'per_page': self.page_size,
             'first_page': 1,
             'last_page': self.page.paginator.num_pages,
             'next': self.get_next_link(),
-            'current_page': int(self.request.GET.get('page',1)),
+            'current_page': current_page,
             'previous': self.get_previous_link(),
-            'from': 1,
-            'to': 1,
+            'from': from_,
+            'to': to_,
             'results': data
         })
 
