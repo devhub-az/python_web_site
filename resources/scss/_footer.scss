@@ -1,0 +1,23 @@
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: $color2;
+    background: $color1;
+    font-size: 2rem;
+    font-family: Arial, serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .footer-content {
+        display: flex;
+        align-items: center;
+        height: 54px;
+
+        .copyright-icon {
+            padding-right: .5rem;
+        }
+    }
+}
