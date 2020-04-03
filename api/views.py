@@ -1,11 +1,14 @@
 from django.shortcuts import get_object_or_404
-from rest_framework.decorators import api_view
+#from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from blog.models import Post
 from .serializers import PostSerializer
 from rest_framework.pagination import PageNumberPagination
 from django.core.paginator import Paginator
-
+from rest_framework import viewsets
+from rest_framework import permissions
+from rest_framework import routers
+from rest_framework.routers import DefaultRouter
 # Create your views here.
 
 class CustomPagination(PageNumberPagination):
@@ -29,7 +32,7 @@ class CustomPagination(PageNumberPagination):
             'results': data
         })
 
-
+"""
 @api_view(['GET'])
 def api_post_list(request):
     paginator = CustomPagination()
@@ -43,3 +46,15 @@ def api_post_detail(request,post_id):
     post = get_object_or_404(Post,id=post_id)
     serializer = PostSerializer(post,many=False)
     return Response(serializer.data)
+"""
+
+class PostViews(viewsets.ModelViewSet):
+    queryset = Post.objects.all()
+    permission_classes = [permissions.AllowAny]
+    pagination_class = CustomPagination
+    serializer_class = PostSerializer
+    def get_queryset(self):
+        return Post.objects.all()
+
+blogRouter = routers.DefaultRouter()
+blogRouter.register(r'posts', PostViews)
