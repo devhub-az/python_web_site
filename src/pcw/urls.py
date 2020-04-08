@@ -22,8 +22,9 @@ from django.conf.urls import handler404, handler500
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('user/', include("user.urls")),
-    path('', include('blog.urls')),
     path('api/',include('api.urls')),
+    path('seminar/',include('seminars.urls')),
+    path('', include('blog.urls')),
 ]
 
 # Error Pages urls
