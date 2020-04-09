@@ -4,7 +4,12 @@
 $color1: #1a0833;
 $color2: #eae6e7;
 
+
 @import '~reset-css';
+
+html{
+    font-size: 10px;
+}
 
 @import "header";
 @import 'footer';
@@ -12,53 +17,151 @@ $color2: #eae6e7;
 /* show */
 
 #show {
-    margin-top: 10rem;
-    height: 50rem;
-    background: #b7b7b7;
+    background: #eaeaea;
     display: flex;
     justify-content: center;
-
+    font-family: Arial, self;
     .container {
-        width: 70%;
-        height: 100%;
-        background: antiquewhite;
+        border:.1rem solid #000;
+        max-width: 85rem;
+        background: #fff;
         position: relative;
-        padding: 2rem;
+        padding: 0 7rem;
+        margin-bottom:3rem;
+        padding-bottom:3rem;
+        h1{
+            background: black;
+            color: #fff;
+            font-family: Arial;
+            padding: .5rem;
+            text-align:center;
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        .comment-input{
+            box-sizing: border-box;
+            width: 100%;
+            font-size: 1.6rem;
+            padding: 1rem;
+            border-radius: 1.5rem;
+            outline: none;
+            font-family: Arial;
+            height: 10rem;
+        }
+        .button-container{
+            text-align: right;
+        }
+        .comment-button{
+            width: 15rem;
+            height: 4rem;
+            background: black;
+            color: #fff;
+            font-size: 2rem;
+            border-radius: 1rem;
+            border:none;
+            margin: 1rem 0;
+            outline:none;
+        }
+        .comment-item{
+            padding:1.5rem;
+            font-size: 1.6rem;
+            border: .1rem solid #000;
+            margin:1rem;
+            border-radius: 1.5rem;
+        }
+
     }
 
     .show-user {
         display: flex;
         align-items: center;
+        padding-bottom: 2rem;
+        position:relative;
 
-        img {
-            width: 12rem;
-            height: 12rem;
+        .user-icon {
+            width: 6rem;
+            height: 6rem;
             border-radius: 50%;
-            border: .1rem solid black;
 
         }
-
-        .show-user-name {
+        .show-user-container{
             font-size: 2rem;
-            font-family: "DIN Pro", serif;
-            color: $color1;
-            font-weight: 700;
+            font-family: Arial;
+        }
+        .show-user-name{
+            display: inline-block;
+            margin: -.5rem 0;
+        }
+        .show-user-container span{
+            padding: 1rem;
+        }
+        .social-icons{
+            position: absolute;
+            right: 0;
+        }
+        .social-icons img{
+            width:4rem;
+            height:4rem;
+        }
+        .social-icons li{
+            text-decoration:none;
+            display:inline-block;
+            padding: 0 .5rem;
+            a{
+                border-radius: 5rem;
+            }
+        }
+    }
+    .show-content{
+        .show-img{
+        }
+        img{
+            width: 100%;
+            max-height: 50rem
+        }
+        p{
+            font-size: 2rem;
+            font-family: Arial;
+            line-height: 3rem;
+            word-spacing: .4rem;
+            padding-top: 1.5rem;
+        }
+
+    }
+    .show-bottom{
+        padding: 2rem 0;
+        display:flex;
+        align-items: center;
+        font-size: 2rem;
+        font-family: monospace;
+        span{
             padding: 0 1rem;
         }
-
-        .show-hr-line {
-            display: inline-block;
-            width: 45%;
-            height: .1rem;
-            background: $color1;
+        .like-dislike-container{
+            display:inline-block;
+            display:flex;
+            align-items: center;
         }
-
-        .show-date {
-            position: absolute;
-            right: 2rem;
-            font-size: 1.5rem;
-            font-style: italic;
-            color: #787878;
+        img{
+            width: 3rem;
+            cursor: pointer;
         }
+        .show-bottom-right{
+            display: flex;
+            align-items: center;
+            position:absolute;
+            right: 7.5rem;
+        }
+    }
+
+}
+@media screen and (max-width:768px){
+    html{
+        font-size:8px;
+    }
+}
+@media screen and (max-width:576px){
+    html{
+        font-size:6px;
     }
 }
