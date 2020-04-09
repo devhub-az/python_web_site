@@ -1,0 +1,298 @@
+/* all */
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v5.0.1 | 20191019
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+menu,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section {
+  display: block;
+}
+
+/* HTML5 hidden-attribute fix for newer browsers */
+
+*[hidden] {
+  display: none;
+}
+
+body {
+  line-height: 1;
+}
+
+menu,
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.header {
+  background: #1a0833;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background: #1a0833;
+  padding: 0 2rem;
+}
+
+.header .logo {
+  width: 6rem;
+  height: 6rem;
+}
+
+.header .logo-text {
+  display: inline-block;
+  font-size: 2.2rem;
+  color: #eae6e7;
+  font-family: "Arial Black", serif;
+  padding: 0 1rem;
+}
+
+.header .menu-list {
+  color: #eae6e7;
+  margin: 0;
+}
+
+.header .menu-list .list-item {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.header .menu-list .list-item a {
+  display: inline-block;
+  font-size: 1.5rem;
+  font-family: Arial, serif;
+  font-weight: 900;
+  padding: 2.7rem 1rem;
+  cursor: pointer;
+  color: #eae6e7;
+  text-decoration: none;
+  transition: all 0.4s;
+}
+
+.header .menu-list .list-item a:hover {
+  background: #eae6e7;
+  color: #1a0833;
+  transition: all 0.4s;
+}
+
+.header .header-right {
+  color: #eae6e7;
+  font-size: 1.5rem;
+  font-family: Arial, serif;
+  position: absolute;
+  right: 3rem;
+}
+
+.header .header-language {
+  padding-right: 3rem;
+  display: inline-block;
+}
+
+.header .header-language span {
+  cursor: pointer;
+}
+
+.header .sign-in-location,
+.header .sign-up-location {
+  color: #eae6e7;
+  text-decoration: none;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: #eae6e7;
+  background: #1a0833;
+  font-size: 2rem;
+  font-family: Arial, serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer .footer-content {
+  display: flex;
+  align-items: center;
+  height: 54px;
+}
+
+.footer .footer-content .copyright-icon {
+  padding-right: 0.5rem;
+}
+
+/* show */
+
+#show {
+  margin-top: 10rem;
+  height: 50rem;
+  background: #b7b7b7;
+  display: flex;
+  justify-content: center;
+}
+
+#show .container {
+  width: 70%;
+  height: 100%;
+  background: antiquewhite;
+  position: relative;
+  padding: 2rem;
+}
+
+#show .show-user {
+  display: flex;
+  align-items: center;
+}
+
+#show .show-user img {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  border: 0.1rem solid black;
+}
+
+#show .show-user .show-user-name {
+  font-size: 2rem;
+  font-family: "DIN Pro", serif;
+  color: #1a0833;
+  font-weight: 700;
+  padding: 0 1rem;
+}
+
+#show .show-user .show-hr-line {
+  display: inline-block;
+  width: 45%;
+  height: 0.1rem;
+  background: #1a0833;
+}
+
+#show .show-user .show-date {
+  position: absolute;
+  right: 2rem;
+  font-size: 1.5rem;
+  font-style: italic;
+  color: #787878;
+}
+
