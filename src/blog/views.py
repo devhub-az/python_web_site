@@ -18,7 +18,7 @@ def index(request):
     return render(request, 'post/sections/index.html', context)
 
 
-def post_create(request):
+def create(request):
     form = PostForm()
     if request.method == 'POST':
         form = PostForm(request.POST or None,request.FILES or None)
@@ -33,7 +33,7 @@ def post_create(request):
     return render(request, 'post/sections/post_create.html', context)
 
 
-def post_detail(request, post_slug):
+def show(request, post_slug):
     post = get_object_or_404(Post, slug=post_slug)
     context = {
         'post': post
@@ -41,7 +41,7 @@ def post_detail(request, post_slug):
     return render(request, 'post/sections/show.html', context)
 
 
-def post_edit(request, post_slug):
+def edit(request, post_slug):
     post = get_object_or_404(Post, slug=post_slug)
     form = PostForm(instance=post)
     if request.method == 'POST':
@@ -55,14 +55,14 @@ def post_edit(request, post_slug):
     return render(request, 'post/sections/edit.html', context)
 
 
-def post_delete(request, post_slug):
+def delete(request, post_slug):
     post = get_object_or_404(Post, slug=post_slug)
     post.deleted = True
     post.save()
     return redirect('post:main-page')
 
 
-def post_like(request):
+def like(request):
     id_ = request.GET.get('id')  # comes from front with ajax
     post = get_object_or_404(Post, id=id_)
     user = request.user

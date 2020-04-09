@@ -7,14 +7,15 @@
     <title>{% block tittle %}{% endblock %} | PCW</title>
 
     <link rel="preload" href="{% static 'js/app.js' %}" as="script">
-    <link rel="stylesheet" href="{% static 'css/app.css' %}" media="print" onload="this.media='all'">
+    <link href="{% static 'css/app.css' %}" media="print" onload="this.media='all'" rel="stylesheet">
 </head>
 <body>
-    {% include "post/layout/header.html" %}
-    {% block content %}{% endblock %}
-    {% block scripts %}{% endblock %}
-    {% include "post/layout/footer.html" %}
-{#    <script src="{% mix 'blog/static/js/app.js' 'blog/static' %}"></script>#}
-    <script type="text/javascript" src="{% static 'js/app.js' %}" async></script>
+{% include "post/layout/header.html" %}
+{% block content %}{% endblock %}
+{% block scripts %}{% endblock %}
+{% include "post/layout/footer.html" %}
+
+
+<script type="text/javascript" src="{% static 'js/app.js' %}" async></script>
 </body>
 </html>
