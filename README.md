@@ -15,6 +15,7 @@ Used: Python Django, Docker, NPM (Yarn), Postgresql
 3. Edit env file
 
     3.1 In src folder copy and paste in same folder .env.example with new name .env
+    
     3.2 Edit .env file
 
 4. Start the development server
