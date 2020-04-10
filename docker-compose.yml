@@ -17,6 +17,6 @@ services:
       - web
     command: nginx -g 'daemon off;'
     ports:
-      - "80:80"
+      - "1314:9002"
     volumes:
       - ./src/static:/var/www/static
