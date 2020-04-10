@@ -4,7 +4,7 @@ from blog.models import Post
 
 post_detail_url = serializers.HyperlinkedIdentityField(
     view_name = 'api:post-detail',
-    lookup_field = 'slug'
+    lookup_field = 'pk'
 )
 
 class PostSerializer(serializers.ModelSerializer):
