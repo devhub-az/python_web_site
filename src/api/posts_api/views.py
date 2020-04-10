@@ -55,7 +55,7 @@ class PostViews(viewsets.ModelViewSet):
     queryset = Post.objects.filter(deleted=False)
     permission_classes = [IsAuthorOrReadOnly]
     pagination_class = CustomPagination
-    lookup_field = 'slug'
+    lookup_field = 'pk'
     def get_queryset(self):
         return Post.objects.filter(deleted=False)
 

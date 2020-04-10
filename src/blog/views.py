@@ -8,57 +8,22 @@ from django.core.paginator import Paginator
 
 
 def index(request):
-    posts = Post.objects.all()
-    paginator = Paginator(posts,10)
-    page = request.GET.get('page')
-    contacts = paginator.get_page(page)
-    context = {
-        'posts': contacts,
-    }
-    return render(request, 'post/sections/index.html', context)
+    return render(request, 'post/sections/index.html',{})
 
 
 def create(request):
-    form = PostForm()
-    if request.method == 'POST':
-        form = PostForm(request.POST or None,request.FILES or None)
-        if form.is_valid():
-            postForm = form.save(commit=False)
-            postForm.author = request.user
-            postForm.save()
-            return HttpResponseRedirect(reverse('post:post-detail', kwargs={'post_slug': postForm.slug}))
-    context = {
-        'form': form,
-    }
-    return render(request, 'post/sections/post_create.html', context)
+    return render(request, 'post/sections/post_create.html', {})
 
 
-def show(request, post_slug):
-    post = get_object_or_404(Post, slug=post_slug)
-    context = {
-        'post': post
-    }
-    return render(request, 'post/sections/show.html', context)
+def show(request, post_pk):
+    return render(request, 'post/sections/show.html',{})
 
 
-def edit(request, post_slug):
-    post = get_object_or_404(Post, slug=post_slug)
-    form = PostForm(instance=post)
-    if request.method == 'POST':
-        form = PostForm(request.POST or None,request.FILES or None,instance=post)
-        if form.is_valid():
-            new_form = form.save(commit=False)
-            new_form.update = True
-            new_form.save()
-            return HttpResponseRedirect(reverse('post:post-detail', kwargs={'post_slug': new_form.slug}))
-    context = {'form': form}
-    return render(request, 'post/sections/edit.html', context)
+def edit(request, post_pk):
+    return render(request, 'post/sections/edit.html',{})
 
 
-def delete(request, post_slug):
-    post = get_object_or_404(Post, slug=post_slug)
-    post.deleted = True
-    post.save()
+def delete(request, post_pk):
     return redirect('post:main-page')
 
 
