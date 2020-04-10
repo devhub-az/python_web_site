@@ -4,6 +4,10 @@
 $color1: #1a0833;
 $color2: #eae6e7;
 
+:root {
+    --color1: black;
+    --color2: #f6f6f6;
+}
 
 @import '~reset-css';
 
@@ -165,3 +169,65 @@ html{
         font-size:6px;
     }
 }
+
+/* post create */
+#post-create{
+    font-family: Arial, self;
+    display: flex;
+    background: var(--color2);
+    .container{
+        display: inline-block;
+        margin: 0 auto;
+        min-width: 70%;
+        .post-create-title{
+            color: var(--color1);
+            font-size: 4rem;
+            font-weight: 700;
+            text-align:center;
+            padding: 3rem 0;
+        }
+        form{
+            padding: 5rem 0;
+            label{
+                font-size: 2rem;
+                padding: 1.5rem;
+
+            }
+            .post-input-style{
+                margin: 1rem 0 3.5rem 0;
+                width: 50%;
+                min-width:40rem;
+                outline:none;
+                border-radius: 1rem;
+                padding: 1.5rem;
+                border: .0005rem solid #000;
+                box-shadow: 0px 3px 17px -8px rgba(112,112,112,0.69);
+                font-family: Arial,self;
+                font-size: 1.6rem;
+            }
+            #post-content{
+                height: 40rem;
+                width:80%;
+            }
+            #post-image{
+                margin: 1rem 0 1.5rem 0;
+            }
+            .post-create-button{
+                width:15rem;
+                height:4rem;
+                background: #b4b4b4;
+                cursor: pointer;
+                border: none;
+                box-shadow: 0px 3px 17px -8px rgba(112,112,112,0.69);
+                border-radius: 1rem;
+                margin: 1.5rem 0;
+                font-size:1.6rem;
+                outline:none;
+                font-weight: 700;
+                color: var(--color2);
+            }
+        }
+    }
+}
+
+
