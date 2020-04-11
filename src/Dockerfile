@@ -8,7 +8,7 @@ RUN mkdir $WEBAPP_DIR
 
 WORKDIR $WEBAPP_DIR
 
-COPY requirements*.txt $WEBAPP_DIR/
+COPY ./requirements.txt $WEBAPP_DIR/
 RUN pip install -r requirements.txt
 
 ADD . $WEBAPP_DIR
