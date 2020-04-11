@@ -5,8 +5,8 @@ services:
     build: ./src
 #    command: django-admin startproject src #This will create the Django project
 #    command: python manage.py test #This will run the server so we can test it is working
-#    command: python manage.py runserver 0.0.0.0:8000 #This will run the server so we can test it is working
-    command: gunicorn pcw.wsgi:application --bind 0.0.0.0:8000 #From this point we use gunicorn to serve the project
+    command: python manage.py runserver 0.0.0.0:8000 #This will run the server so we can test it is working
+#    command: gunicorn pcw.wsgi:application --bind 0.0.0.0:8000 #From this point we use gunicorn to serve the project
     volumes:
       - ./src:/src
     ports:

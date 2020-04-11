@@ -1,74 +1,65 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="../../../../static/css/app.css">
-</head>
-<body>
-    <div id = "show">
-        <div class="container">.
-            <h1>"Python Haqqinda Melumat"</h1>
-            <div class="show-user">
-                <img src="../../../../static/img/user.png" alt="" class = "user-icon">
-                <div class="show-user-container">
-                    <span class="show-user-name">vugartaghiyev</span><br>
-                    <span class="show-date">4 March</span>'<span class="show-words-count">365 words</span>/<span class="show-like-count">365 like</span>
-                </div>
-                     <ul class="social-icons">
-                        <li><a href="#"><img src="../../../../static/img/github-icon.svg" alt=""></a></li>
-                        <li><a href="#"><img src="../../../../static/img/facebook-icon.svg" alt=""></a></li>
-                        <li><a href="#"><img src="../../../../static/img/linkedin-icon.svg" alt=""></a></li>
-                    </ul>
+{% extends 'post/layout.html' %}
+
+{% block tittle %}
+    {{ post.name }}
+{% endblock %}
+
+{% block content %}
+<div id="show">
+    <div class="container">.
+        <h1>{{ post.name }}</h1>
+        <div class="show-user">
+            <img src="../../../../static/img/user.png" alt="" class="user-icon">
+            <div class="show-user-container">
+                <span class="show-user-name">{{ post.author.username }}</span><br>
+                <span class="show-date">4 March</span>'<span class="show-words-count">365 words</span>/<span
+                    class="show-like-count">365 like</span>
             </div>
-            <div class="show-content">
-                <div class="show-img">
-                    <img src="../../../../static/img/show-img.jpg" alt="">
-                </div>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam aspernatur, at beatae consectetur cum earum enim esse iusto natus obcaecati quam qui saepe sapiente similique sit, totam vel voluptate? Adipisci aliquam aliquid assumenda autem cumque delectus deleniti dicta dignissimos distinctio ducimus, eligendi enim excepturi harum impedit labore laborum laudantium molestiae nam nihil nisi numquam pariatur perspiciatis possimus quae quia quod quos rem sed sint sunt tempora tempore ullam, ut veritatis vitae voluptates voluptatibus. Ad aliquid beatae consectetur, dolorem ducimus, ea esse exercitationem facere ipsum numquam officia recusandae rem repellat repudiandae tempore vel vitae? Accusamus accusantium ad assumenda beatae consequatur corporis cum distinctio eligendi esse et illo laboriosam, maiores mollitia nemo neque nihil, nostrum odit officiis omnis porro quas repellat repudiandae similique sunt totam vel, veritatis? Accusantium amet consequuntur culpa error ex facere fugiat hic ipsa nam nulla, praesentium quam quasi saepe tempora tenetur unde vero voluptas voluptatem! Inventore iure officia rerum sed totam? Adipisci molestiae officia quod sint? Aliquam aliquid dolorum eligendi excepturi impedit, ipsa iusto, magni molestiae nam, neque quas quos recusandae similique sunt vel. Ab accusamus dolorum, error explicabo facilis fuga incidunt iure iusto minima molestiae necessitatibus odit porro quia quod saepe veniam voluptas? Deserunt magni, porro! Deleniti?
-                </p>
+            <ul class="social-icons">
+                <li><a href="#"><img src="../../../../static/img/github-icon.svg" alt=""></a></li>
+                <li><a href="#"><img src="../../../../static/img/facebook-icon.svg" alt=""></a></li>
+                <li><a href="#"><img src="../../../../static/img/linkedin-icon.svg" alt=""></a></li>
+            </ul>
+        </div>
+        <div class="show-content">
+            <div class="show-img">
+                <img src="../../../../static/img/show-img.jpg" alt="">
             </div>
-            <div class="show-bottom">
-                <div class="like-dislike-container">
-                    <img src="../../../../static/img/like.svg" alt="" class="like-icon">
-                    <span class="like-count">14</span>
-                    <img src="../../../../static/img/dislike.svg" alt="" class="dislike-icon">
-                    <span class="dislike-count">12</span>
-                </div>
-                <div class="show-bottom-right">
-                    <img src="../../../../static/img/eye-2.svg" alt="">
-                    <span class="show-count">125</span>
-                    <img src="../../../../static/img/share-icon.svg" alt="" class = "share-icon">
-                </div>
+            <p>
+                {{ post.body }}
+            </p>
+        </div>
+        <div class="show-bottom">
+            <div class="like-dislike-container">
+                <img src="../../../../static/img/like.svg" alt="" class="like-icon">
+                <span class="like-count">14</span>
+                <img src="../../../../static/img/dislike.svg" alt="" class="dislike-icon">
+                <span class="dislike-count">12</span>
             </div>
-                <textarea name="" id="" cols="30" rows="10" class="comment-input"></textarea>
-            <div class="button-container">
-                <button class="comment-button">comment</button>
+            <div class="show-bottom-right">
+                <img src="../../../../static/img/eye-2.svg" alt="">
+                <span class="show-count">125</span>
+                <img src="../../../../static/img/share-icon.svg" alt="" class="share-icon">
             </div>
-            <div class="comments">
-                <div class="comment-item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores doloremque ex exercitationem incidunt, nam praesentium quas quibusdam reiciendis sapiente voluptatum.</div>
-                <div class="comment-item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores doloremque ex exercitationem incidunt, nam praesentium quas quibusdam reiciendis sapiente voluptatum.</div>
-                <div class="comment-item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores doloremque ex exercitationem incidunt, nam praesentium quas quibusdam reiciendis sapiente voluptatum.</div>
-                <div class="comment-item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores doloremque ex exercitationem incidunt, nam praesentium quas quibusdam reiciendis sapiente voluptatum.</div>
+        </div>
+        <textarea name="" id="" cols="30" rows="10" class="comment-input"></textarea>
+        <div class="button-container">
+            <button class="comment-button">comment</button>
+        </div>
+        <div class="comments">
+            <div class="comment-item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores doloremque ex
+                exercitationem incidunt, nam praesentium quas quibusdam reiciendis sapiente voluptatum.
+            </div>
+            <div class="comment-item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores doloremque ex
+                exercitationem incidunt, nam praesentium quas quibusdam reiciendis sapiente voluptatum.
+            </div>
+            <div class="comment-item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores doloremque ex
+                exercitationem incidunt, nam praesentium quas quibusdam reiciendis sapiente voluptatum.
+            </div>
+            <div class="comment-item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores doloremque ex
+                exercitationem incidunt, nam praesentium quas quibusdam reiciendis sapiente voluptatum.
             </div>
         </div>
     </div>
-</body>
-</html>
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-
-<strong>{{ post.name }} posted by {{ post.author.username }}</strong>
-
-<p>{{ post.body }}</p>
+</div>
+{% endblock %}
