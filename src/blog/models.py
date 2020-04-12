@@ -12,6 +12,8 @@ class Post(models.Model):
     image = models.ImageField(upload_to = upload_to,default='',null=True,blank=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     likes = models.ManyToManyField(User, blank=True, related_name='likes')
+    dislikes = models.ManyToManyField(User, blank=True, related_name='dislikes')
+    viewed = models.PositiveIntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     updated = models.BooleanField(default=False)
@@ -30,3 +32,7 @@ class Post(models.Model):
 
     def total_likes(self):
         return self.likes.count()
+
+    def total_dislikes(self):
+        return self.dislikes.count()
+
