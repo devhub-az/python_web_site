@@ -20,7 +20,7 @@ class CustomPagination(PageNumberPagination):
     page_size = 10
 
     def get_paginated_response(self, data):
-        posts = Post.objects.all()
+        posts = Post.objects.filter(deleted=False)
         current_page = int(self.request.GET.get('page', 1))
         paginator = Paginator(posts, self.page_size)
         from_ = paginator.page(current_page).start_index()
