@@ -9,12 +9,15 @@
     <link rel="preload" href="{% static 'js/app.js' %}" as="script">
     <link href="{% static 'css/app.css' %}" media="print" onload="this.media='all'" rel="stylesheet">
 </head>
-<body>
-{% include "post/layout/header.html" %}
-{% block content %}{% endblock %}
-{% block scripts %}{% endblock %}
-{% include "post/layout/footer.html" %}
-
+<body data-theme="default">
+<div class="page-container">
+    <div class="wrap">
+        {% include "post/layout/header.html" %}
+    {% block content %}{% endblock %}
+    {% block scripts %}{% endblock %}
+    {% include "post/layout/footer.html" %}
+    </div>
+</div>
 
 z</body>
 </html>

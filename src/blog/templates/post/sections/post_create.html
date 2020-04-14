@@ -1,32 +1,24 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="../../../../static/css/app.css">
-</head>
-<body>
+{% extends 'post/layout.html' %}
 
-    <div id="post-create">
-        <div class="container">
-            <h1 class = "post-create-title">Post Create</h1>
-            <form method = 'POST' enctype="multipart/form-data">
-                <label for="post-name">Post Name</label><br>
-                <input type="text" id = "post-name" class = "post-input-style" placeholder="Post name"><br>
-                <label for="post-content">Post Content</label><br>
-                <textarea id="post-content" class = "post-input-style" placeholder="Writing....."></textarea><br>
-                <label for="post-image">Post Image</label><br>
-                <input type="file" name = "image" id = "post-image"><br>
-                <button class="post-create-button">Create</button>
-            </form>
-        </div>
+{% block tittle %}
+    Post Create
+{% endblock %}
+
+{% block content %}
+<div id="post-create">
+    <div class="container">
+        <h1 class="post-create-title">Post Create</h1>
+        <form method='POST' enctype="multipart/form-data">
+            <label for="post-name">Post Name</label><br>
+            <input type="text" id="post-name" class="post-input-style" placeholder="Post name"><br>
+            <label for="post-content">Post Content</label><br>
+            <textarea id="post-content" class="post-input-style" placeholder="Writing....."></textarea><br>
+            <label for="post-image">Post Image</label><br>
+            <input type="file" name="image" id="post-image"><br>
+            <button class="post-create-button">Create</button>
+        </form>
     </div>
-
-</body>
-</html>
-
+</div>
+{% endblock %}
 
 

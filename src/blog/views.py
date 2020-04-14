@@ -26,25 +26,3 @@ def edit(request, post_pk):
 def delete(request, post_pk):
     return redirect('post:main-page')
 
-
-def like(request):
-    id_ = request.GET.get('id')  # comes from front with ajax
-    post = get_object_or_404(Post, id=id_)
-    user = request.user
-    liked = False
-    likes_count = post.total_likes()
-    if user in post.likes.all():
-        liked = False
-        post.likes.remove(user)
-        likes_count -= 1
-    else:
-        liked = True
-        post.likes.add(user)
-        likes_count += 1
-    # data send to front with ajax
-    data = {
-        "liked": liked,
-        "id_": post.id,
-        'likes_count': likes_count,
-    }
-    return JsonResponse(data)

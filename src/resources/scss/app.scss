@@ -1,5 +1,28 @@
 @charset "utf-8";
 
+@import '~@mdi/font/scss/variables';
+@import '~@mdi/font/scss/functions';
+//@import '~@mdi/font/scss/path';
+
+// 'path'-file fixes
+@font-face {
+    font-family: '#{$mdi-font-name}';
+    font-display: swap;
+    src: url('/static/fonts/#{$mdi-filename}-webfont.eot');
+    src: url('/static/fonts/#{$mdi-filename}-webfont.eot?#iefix') format('embedded-opentype'),
+    url('/static/fonts/#{$mdi-filename}-webfont.woff2') format('woff2'),
+    url('/static/fonts/#{$mdi-filename}-webfont.woff') format('woff'),
+    url('/static/fonts/#{$mdi-filename}-webfont.ttf') format('truetype'),
+    url('/static/fonts/#{$mdi-filename}-webfont.svg##{$mdi-filename}#{$mdi-font-weight}') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import '~@mdi/font/scss/core';
+@import '~@mdi/font/scss/icons';
+@import '~@mdi/font/scss/extras';
+@import '~@mdi/font/scss/animated';
+
 /* all */
 
 
@@ -10,15 +33,26 @@
 
 @import '~reset-css';
 
-html{
+html {
     font-size: 10px;
 }
 body{
     font-family: Arial, self;
 }
 
+.page-container {
+    position: relative;
+    min-height: 100vh;
+
+    .wrap{
+        padding-bottom: 54px;
+    }
+}
+
+@import 'variables';
 @import "header";
 @import 'footer';
+@import "pagination";
 
 /* show */
 
@@ -26,25 +60,28 @@ body{
     background: #eaeaea;
     display: flex;
     justify-content: center;
-    font-family: Arial, self;
+    font-family: Arial, self, serif;
+
     .container {
-        border:.1rem solid #000;
+        border: .1rem solid #000;
         max-width: 85rem;
         background: #fff;
         position: relative;
         padding: 0 7rem;
-        margin-bottom:3rem;
-        padding-bottom:3rem;
-        h1{
+        margin-bottom: 3rem;
+        padding-bottom: 3rem;
+
+        h1 {
             background: black;
             color: #fff;
             font-family: Arial;
             padding: .5rem;
-            text-align:center;
+            text-align: center;
             font-size: 4rem;
             margin-bottom: 1rem;
         }
-        .comment-input{
+
+        .comment-input {
             box-sizing: border-box;
             width: 100%;
             font-size: 1.6rem;
@@ -54,25 +91,28 @@ body{
             font-family: Arial;
             height: 10rem;
         }
-        .button-container{
+
+        .button-container {
             text-align: right;
         }
-        .comment-button{
+
+        .comment-button {
             width: 15rem;
             height: 4rem;
             background: black;
             color: #fff;
             font-size: 2rem;
             border-radius: 1rem;
-            border:none;
+            border: none;
             margin: 1rem 0;
-            outline:none;
+            outline: none;
         }
-        .comment-item{
-            padding:1.5rem;
+
+        .comment-item {
+            padding: 1.5rem;
             font-size: 1.6rem;
             border: .1rem solid #000;
-            margin:1rem;
+            margin: 1rem;
             border-radius: 1.5rem;
         }
 
@@ -82,7 +122,7 @@ body{
         display: flex;
         align-items: center;
         padding-bottom: 2rem;
-        position:relative;
+        position: relative;
 
         .user-icon {
             width: 6rem;
@@ -90,42 +130,52 @@ body{
             border-radius: 50%;
 
         }
-        .show-user-container{
+
+        .show-user-container {
             font-size: 2rem;
             font-family: Arial;
         }
-        .show-user-name{
+
+        .show-user-name {
             display: inline-block;
             margin: -.5rem 0;
         }
-        .show-user-container span{
+
+        .show-user-container span {
             padding: 1rem;
         }
-        .social-icons{
+
+        .social-icons {
             position: absolute;
             right: 0;
         }
-        .social-icons img{
-            width:4rem;
-            height:4rem;
+
+        .social-icons img {
+            width: 4rem;
+            height: 4rem;
         }
-        .social-icons li{
-            text-decoration:none;
-            display:inline-block;
+
+        .social-icons li {
+            text-decoration: none;
+            display: inline-block;
             padding: 0 .5rem;
-            a{
+
+            a {
                 border-radius: 5rem;
             }
         }
     }
-    .show-content{
-        .show-img{
+
+    .show-content {
+        .show-img {
         }
-        img{
+
+        img {
             width: 100%;
             max-height: 50rem
         }
-        p{
+
+        p {
             font-size: 2rem;
             font-family: Arial;
             line-height: 3rem;
@@ -134,97 +184,112 @@ body{
         }
 
     }
-    .show-bottom{
+
+    .show-bottom {
         padding: 2rem 0;
-        display:flex;
+        display: flex;
         align-items: center;
         font-size: 2rem;
         font-family: monospace;
-        span{
+
+        span {
             padding: 0 1rem;
         }
-        .like-dislike-container{
-            display:inline-block;
-            display:flex;
+
+        .like-dislike-container {
+            display: inline-block;
+            display: flex;
             align-items: center;
         }
-        img{
+
+        img {
             width: 3rem;
             cursor: pointer;
         }
-        .show-bottom-right{
+
+        .show-bottom-right {
             display: flex;
             align-items: center;
-            position:absolute;
+            position: absolute;
             right: 7.5rem;
         }
     }
 
 }
-@media screen and (max-width:768px){
-    html{
-        font-size:8px;
+
+@media screen and (max-width: 768px) {
+    html {
+        font-size: 8px;
     }
 }
-@media screen and (max-width:576px){
-    html{
-        font-size:6px;
+
+@media screen and (max-width: 576px) {
+    html {
+        font-size: 6px;
     }
 }
 
 /* post create */
-#post-create{
+#post-create {
     font-family: Arial, self;
     display: flex;
     background: var(--color2);
-    .container{
+
+    .container {
         display: inline-block;
         margin: 0 auto;
         min-width: 70%;
-        .post-create-title{
+
+        .post-create-title {
             color: var(--color1);
             font-size: 5rem;
             font-weight: 700;
-            text-align:center;
+            text-align: center;
             padding: 3rem 0;
         }
-        form{
+
+        form {
             padding: 5rem 0;
-            label{
+
+            label {
                 font-size: 2rem;
                 padding: 1.5rem;
 
             }
-            .post-input-style{
+
+            .post-input-style {
                 margin: 1rem 0 3.5rem 0;
                 width: 50%;
-                min-width:40rem;
-                outline:none;
+                min-width: 40rem;
+                outline: none;
                 border-radius: 1rem;
                 padding: 1.5rem;
                 border: .0005rem solid #000;
-                box-shadow: 0px 3px 17px -8px rgba(112,112,112,0.69);
-                font-family: Arial,self;
+                box-shadow: 0px 3px 17px -8px rgba(112, 112, 112, 0.69);
+                font-family: Arial, self;
                 font-size: 1.6rem;
             }
-            #post-content{
+
+            #post-content {
                 height: 40rem;
-                width:80%;
+                width: 80%;
             }
-            #post-image{
+
+            #post-image {
                 margin: 1rem 0 1.5rem 0;
             }
-            .post-create-button{
-                width:15rem;
-                height:4rem;
+
+            .post-create-button {
+                width: 15rem;
+                height: 4rem;
                 background: #b4b4b4;
                 cursor: pointer;
                 border: none;
-                box-shadow: 0px 3px 17px -8px rgba(112,112,112,0.69);
+                box-shadow: 0px 3px 17px -8px rgba(112, 112, 112, 0.69);
                 border-radius: 1rem;
                 margin: 1.5rem 0;
-                font-size:1.6rem;
-                outline:none;
+                font-size: 1.6rem;
+                outline: none;
                 font-weight: 700;
                 color: var(--color2);
             }
