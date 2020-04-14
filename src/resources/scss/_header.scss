@@ -1,9 +1,8 @@
 .header {
-    background: $color1;
     display: flex;
     align-items: center;
     position: relative;
-    background: $color1;
+    background: var(--color1);
     padding: 0 2rem;
 
     .logo {
@@ -14,13 +13,13 @@
     .logo-text {
         display: inline-block;
         font-size: 2.2rem;
-        color: $color2;
+        color: var(--color2);
         font-family: "Arial Black", serif;
         padding: 0 1rem;
     }
 
     .menu-list {
-        color: $color2;
+        color: var(--color2);
         margin: 0;
 
         .list-item {
@@ -34,21 +33,21 @@
                 font-weight: 900;
                 padding: 2.7rem 1rem;
                 cursor: pointer;
-                color: $color2;
+                color: var(--color2);
                 text-decoration: none;
                 transition: all .4s;
             }
 
             a:hover {
-                background: $color2;
-                color: $color1;
+                background: var(--color2);
+                color: var(--color1);
                 transition: all .4s;
             }
         }
     }
 
     .header-right {
-        color: $color2;
+        color: var(--color2);
         font-size: 1.5rem;
         font-family: Arial, serif;
         position: absolute;
@@ -65,7 +64,7 @@
     }
 
     .sign-in-location, .sign-up-location {
-        color: $color2;
+        color: var(--color2);
         text-decoration: none;
     }
 

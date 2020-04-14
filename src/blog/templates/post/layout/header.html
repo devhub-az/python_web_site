@@ -3,7 +3,7 @@
     <img src="{% static 'img/pcw.png' %}" alt="" class="logo">
     <p class="logo-text">Community</p>
     <ul class="menu-list">
-        <li class="list-item"><a href="#">Home</a></li>
+        <li class="list-item"><a href="./show.html">Home</a></li>
         <li class="list-item"><a href="#">Books</a></li>
         <li class="list-item"><a href="#">Roadmaps</a></li>
         <li class="list-item"><a href="#">Telegram</a></li>
@@ -16,7 +16,7 @@
             <span class="en">en</span>
             <span class="ru">ru</span>
         </p>
-        <a href="#" class="sign-in-location">sign in</a> /
-        <a href="#" class="sign-up-location">sing up</a>
+        <a href="{% url 'user:login' %}" class="sign-in-location">sign in</a> /
+        <a href="{% url 'user:register' %}" class="sign-up-location">sing up</a>
     </div>
 </div>

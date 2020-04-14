@@ -1,25 +1,28 @@
-{% load crispy_forms_tags %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="/static/css/app.css/" rel="stylesheet">
+</head>
+<body>
 
-{% block orxan %}
-
-
-
-    {% if request.user.is_authenticated %}
-        <h1>{{ request.user.username }}</h1>
-    {% endif %}
-
-
-<br>
-<form method = 'post'>
-<div class="row form-group">
-    <div class="col-md-12">
-      {% csrf_token %}  
-      {{form|crispy}}
-      <br>
-      <input type="submit" value="Daxil ol" class="btn btn-sm btn-success">
+    <div class="login">
+        <div class="container">
+            <h1 class="login-title">Login</h1>
+            <form method = 'post'>
+                <label for="login-user-name">Username</label><br>
+                <input type="text" id = "login-user-name" placeholder="Username"><br>
+                <label for="login-password">Password</label><br>
+                <input type="password" id = "login-password" placeholder="Password"><br>
+                <button class="login-button">Login</button>
+            </form>
+        </div>
     </div>
-  </div>
-</form>
 
+</body>
+</html>
 
-{% endblock orxan %}

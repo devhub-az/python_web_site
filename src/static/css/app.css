@@ -156,12 +156,15 @@ html {
   font-size: 10px;
 }
 
+body {
+  font-family: Arial, self;
+}
+
 .header {
-  background: #1a0833;
   display: flex;
   align-items: center;
   position: relative;
-  background: #1a0833;
+  background: var(--color1);
   padding: 0 2rem;
 }
 
@@ -173,13 +176,13 @@ html {
 .header .logo-text {
   display: inline-block;
   font-size: 2.2rem;
-  color: #eae6e7;
+  color: var(--color2);
   font-family: "Arial Black", serif;
   padding: 0 1rem;
 }
 
 .header .menu-list {
-  color: #eae6e7;
+  color: var(--color2);
   margin: 0;
 }
 
@@ -195,19 +198,19 @@ html {
   font-weight: 900;
   padding: 2.7rem 1rem;
   cursor: pointer;
-  color: #eae6e7;
+  color: var(--color2);
   text-decoration: none;
   transition: all 0.4s;
 }
 
 .header .menu-list .list-item a:hover {
-  background: #eae6e7;
-  color: #1a0833;
+  background: var(--color2);
+  color: var(--color1);
   transition: all 0.4s;
 }
 
 .header .header-right {
-  color: #eae6e7;
+  color: var(--color2);
   font-size: 1.5rem;
   font-family: Arial, serif;
   position: absolute;
@@ -225,7 +228,7 @@ html {
 
 .header .sign-in-location,
 .header .sign-up-location {
-  color: #eae6e7;
+  color: var(--color2);
   text-decoration: none;
 }
 
@@ -233,8 +236,8 @@ html {
   position: absolute;
   bottom: 0;
   width: 100%;
-  color: #eae6e7;
-  background: #1a0833;
+  color: var(--color2);
+  background: var(--color1);
   font-size: 2rem;
   font-family: Arial, serif;
   display: flex;
@@ -434,7 +437,7 @@ html {
 
 #post-create .container .post-create-title {
   color: var(--color1);
-  font-size: 4rem;
+  font-size: 5rem;
   font-weight: 700;
   text-align: center;
   padding: 3rem 0;
@@ -475,6 +478,116 @@ html {
   width: 15rem;
   height: 4rem;
   background: #b4b4b4;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0px 3px 17px -8px rgba(112, 112, 112, 0.69);
+  border-radius: 1rem;
+  margin: 1.5rem 0;
+  font-size: 1.6rem;
+  outline: none;
+  font-weight: 700;
+  color: var(--color2);
+}
+
+/* login */
+
+.login {
+  display: flex;
+  justify-content: center;
+  background: var(--color2);
+  min-height: 100vh;
+}
+
+.login .container {
+  width: 60%;
+  text-align: center;
+}
+
+.login .container .login-title {
+  color: var(--color1);
+  font-size: 5rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 3rem 0;
+  margin-bottom: 3rem;
+}
+
+.login .container form {
+  display: inline-block;
+  font-size: 2.5rem;
+}
+
+.login .container form input {
+  margin: 2rem;
+  margin-top: 0.5rem;
+  font-size: 2rem;
+  width: 35rem;
+  outline: none;
+  border-radius: 1.2rem;
+  padding: 1rem;
+  border: 0.0005rem solid #000;
+  box-shadow: 0px 3px 17px -8px rgba(112, 112, 112, 0.69);
+}
+
+.login .container form .login-button {
+  width: 15rem;
+  height: 4rem;
+  background: var(--color1);
+  cursor: pointer;
+  border: none;
+  box-shadow: 0px 3px 17px -8px rgba(112, 112, 112, 0.69);
+  border-radius: 1rem;
+  margin: 1.5rem 0;
+  font-size: 1.6rem;
+  outline: none;
+  font-weight: 700;
+  color: var(--color2);
+}
+
+/* register */
+
+.register {
+  display: flex;
+  justify-content: center;
+  background: var(--color2);
+  min-height: 100vh;
+}
+
+.register .container {
+  width: 60%;
+  text-align: center;
+}
+
+.register .container .register-title {
+  color: var(--color1);
+  font-size: 5rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 3rem 0;
+  margin-bottom: 3rem;
+}
+
+.register .container form {
+  display: inline-block;
+  font-size: 2.5rem;
+}
+
+.register .container form input {
+  margin: 2rem;
+  margin-top: 0.5rem;
+  font-size: 2rem;
+  width: 35rem;
+  outline: none;
+  border-radius: 1.2rem;
+  padding: 1rem;
+  border: 0.0005rem solid #000;
+  box-shadow: 0px 3px 17px -8px rgba(112, 112, 112, 0.69);
+}
+
+.register .container form .register-button {
+  width: 15rem;
+  height: 4rem;
+  background: var(--color1);
   cursor: pointer;
   border: none;
   box-shadow: 0px 3px 17px -8px rgba(112, 112, 112, 0.69);
