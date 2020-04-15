@@ -1,18 +1,13 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link href="/static/css/app.css/" rel="stylesheet">
-</head>
-<body>
+{% extends 'post/layout.html' %}
 
+{% block tittle %}
+    Login
+{% endblock %}
+
+{% block content %}
     <div class="login">
         <div class="container">
-            <h1 class="login-title">Login</h1>
+            <h1 class="page-title">Login</h1>
             <form method = 'post'>
                 <label for="login-user-name">Username</label><br>
                 <input type="text" id = "login-user-name" placeholder="Username"><br>
@@ -23,6 +18,5 @@
         </div>
     </div>
 
-</body>
-</html>
+{% endblock %}
 
