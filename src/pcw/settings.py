@@ -34,12 +34,19 @@ INSTALLED_APPS = [
     'django_seed',
     'djangomix',
     'rest_framework',
+    'rest_framework.authtoken',
     # 'error_pages',
     'crispy_forms',
     'comments'
 
-
 ]
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ]
+}
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
