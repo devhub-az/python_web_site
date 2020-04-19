@@ -1,34 +1,34 @@
 @charset "utf-8";
 
-@import '~@mdi/font/scss/variables';
-@import '~@mdi/font/scss/functions';
-//@import '~@mdi/font/scss/path';
-
-// 'path'-file fixes
-@font-face {
-    font-family: '#{$mdi-font-name}';
-    font-display: swap;
-    src: url('/static/fonts/#{$mdi-filename}-webfont.eot');
-    src: url('/static/fonts/#{$mdi-filename}-webfont.eot?#iefix') format('embedded-opentype'),
-    url('/static/fonts/#{$mdi-filename}-webfont.woff2') format('woff2'),
-    url('/static/fonts/#{$mdi-filename}-webfont.woff') format('woff'),
-    url('/static/fonts/#{$mdi-filename}-webfont.ttf') format('truetype'),
-    url('/static/fonts/#{$mdi-filename}-webfont.svg##{$mdi-filename}#{$mdi-font-weight}') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@import '~@mdi/font/scss/core';
-@import '~@mdi/font/scss/icons';
-@import '~@mdi/font/scss/extras';
-@import '~@mdi/font/scss/animated';
+//@import '~@mdi/font/scss/variables';
+//@import '~@mdi/font/scss/functions';
+////@import '~@mdi/font/scss/path';
+//
+//// 'path'-file fixes
+//@font-face {
+//    font-family: '#{$mdi-font-name}';
+//    font-display: swap;
+//    src: url('/static/fonts/#{$mdi-filename}-webfont.eot');
+//    src: url('/static/fonts/#{$mdi-filename}-webfont.eot?#iefix') format('embedded-opentype'),
+//    url('/static/fonts/#{$mdi-filename}-webfont.woff2') format('woff2'),
+//    url('/static/fonts/#{$mdi-filename}-webfont.woff') format('woff'),
+//    url('/static/fonts/#{$mdi-filename}-webfont.ttf') format('truetype'),
+//    url('/static/fonts/#{$mdi-filename}-webfont.svg##{$mdi-filename}#{$mdi-font-weight}') format('svg');
+//    font-weight: normal;
+//    font-style: normal;
+//}
+//
+//@import '~@mdi/font/scss/core';
+//@import '~@mdi/font/scss/icons';
+//@import '~@mdi/font/scss/extras';
+//@import '~@mdi/font/scss/animated';
 
 /* all */
 
 
 :root {
-    --color1: black ;
-    --color2: #f6f6f6;
+    --color1: rgba(0, 0, 0, 0.87) ;
+    --color2: #eaeaea;
 }
 
 @import '~reset-css';
@@ -64,7 +64,7 @@ body{
     font-family: Arial, self, serif;
 
     .container {
-        border: .1rem solid #000;
+        border: .1rem solid var(--color1);
         max-width: 85rem;
         background: #fff;
         position: relative;
@@ -218,20 +218,9 @@ body{
 
 }
 
-@media screen and (max-width: 768px) {
-    html {
-        font-size: 8px;
-    }
-}
-
-@media screen and (max-width: 576px) {
-    html {
-        font-size: 6px;
-    }
-}
 
 /* post create */
-#post-create {
+.post-create {
     font-family: Arial, self;
     display: flex;
     background: var(--color2);
@@ -250,24 +239,13 @@ body{
 
         form {
             padding: 5rem 0;
-
+            input{
+                margin-left:0;
+            }
             label {
                 font-size: 2rem;
                 padding: 1.5rem;
 
-            }
-
-            .post-input-style {
-                margin: 1rem 0 3.5rem 0;
-                width: 50%;
-                min-width: 40rem;
-                outline: none;
-                border-radius: 1rem;
-                padding: 1.5rem;
-                border: .0005rem solid #000;
-                box-shadow: 0px 3px 17px -8px rgba(112, 112, 112, 0.69);
-                font-family: Arial, self;
-                font-size: 1.6rem;
             }
 
             #post-content {
@@ -281,16 +259,28 @@ body{
         }
     }
 }
+.post-input-style {
+    margin: 1rem 0 3.5rem 0;
+    width: 50%;
+    min-width: 40rem;
+    outline: none;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    border: .0005rem solid #000;
+    box-shadow: 0px 3px 17px -8px rgba(112, 112, 112, 0.69);
+    font-family: Arial, self;
+    font-size: 1.6rem;
+}
 
 /* login */
 
 .page-title{
     color: var(--color1);
-    font-size: 5rem;
+    font-size: 6rem;
     font-weight: 700;
     text-align:center;
     padding: 3rem 0;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 form{
@@ -371,6 +361,192 @@ form{
                 width: 35rem;
             }
         }
+    }
+}
+
+/* seminar list */
+
+.seminar-list-container{
+    display:flex;
+    background:var(--color2);
+    color: var(--color1);
+    justify-content: center;
+    font-family: Arial, self;
+    .container{
+        width:90%;
+        .seminar-list{
+            text-align:center;
+            padding-bottom:5rem;
+            .seminar-list-item:hover{
+                opacity: 1.5;
+            }
+            .seminar-list-item{
+                background:#fff;
+                display:inline-block;
+                margin:1rem;
+                box-shadow: 0px 3px 17px -8px rgba(112,112,112,0.69);
+                text-align:left;
+                text-decoration:none;
+                width:45rem;
+                height:60rem;
+                border-radius:1rem;
+                font-size: 1.8rem;
+                position:relative;
+                cursor:pointer;
+                //border:1px solid black;
+                a{
+                    text-decoration:none;
+                    color: var(--color1);
+                }
+                .seminar-item-bg{
+                    background: rgba(0,0,0,0.7);
+                    opacity:0;
+                    z-indexx:2;
+                    width:100%;
+                    height:100%;
+                    position:absolute;
+                    border-radius:1rem;
+                    top:0;
+                    left:0;
+                    transition:all .5s;
+                    .seminar-item-read-more{
+                        font-size:4rem;
+                        color: white;
+                        font-weight:bold;
+                        position:absolute;
+                        top:50%;
+                        left:50%;
+                        transform:translate(-50%,-50%);
+                    }
+                }
+                .seminar-item-bg:hover{
+                    opacity:1;
+                    transition:all .5s;
+                }
+                img{
+                    width:100%;
+                    height:25rem;
+                    padding:0;
+                    margin:0;
+                    border-top-right-radius: 1rem;
+                    border-top-left-radius: 1rem;
+                }
+                .seminar-item-content{
+                    padding:2rem;
+                    p{
+                        padding:.8rem 0;
+                    }
+                }
+                .seminar-item-about{
+                    height: 16rem;
+                }
+                .seminar-item-about:after{
+                    content:'....';
+                }
+                .seminar-item-name{
+                    font-size:2.5rem;
+                    font-weight:bold;
+                }
+                .seminar-item-owner,.seminar-item-date,.seminar-item-location{
+                    font-size:2rem;
+                    font-weight:bold;
+                    font-style:italic;
+                }
+            }
+        }
+    }
+}
+
+/* Seminar Detail */
+
+.seminar-detail{
+    display: flex;
+    justify-content: center;
+    .container{
+        width:60%;
+        display:inline-block;
+        .seminar-detail-content{
+            padding:.5rem 5rem 4rem 5rem;
+            border:.1rem solid var(--color1);
+            .seminar-detail-name{
+                background: var(--color1);
+                color: var(--color2);
+                font-family: Arial;
+                padding: .5rem;
+                text-align: center;
+                font-size: 4rem;
+                margin-bottom: 1rem;
+            }
+            img{
+                width:100%;
+            }
+            .seminar-detail-about{
+                font-size:2rem;
+                line-height:3rem;
+                padding:1rem 0;
+            }
+            .seminar-detail-owner, .seminar-detail-date, .seminar-detail-location{
+                font-size: 2.5rem;
+                font-style:italic;
+                font-weight:bold;
+                padding:1rem 0;
+            }
+            .shadow-map{
+                width:100%;
+                height:30rem;
+            }
+        }
+
+    }
+}
+
+/* Seminar Create */
+
+.seminar-create{
+    display:flex;
+    justify-content: center;
+    .container{
+        width: 80%;
+        padding:0 5rem;
+        form{
+            padding-bottom:4rem;
+            label{
+                font-size:2.5rem;
+                padding-left:3rem;
+            }
+            input{
+                width:40rem;
+            }
+            input[type = "file"]{
+                margin:1rem 2rem
+            }
+            textarea{
+                margin-left:2rem;
+                width:50rem;
+                height:15rem;
+            }
+            button{
+                margin-left:2rem;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 992px) {
+    html {
+        font-size: 9px;
+    }
+}
+@media screen and (max-width: 768px) {
+    html {
+        font-size: 8px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    html {
+        font-size: 6px;
     }
 }
 

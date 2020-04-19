@@ -1,8 +1,8 @@
 /* all */
 
 :root {
-  --color1: black;
-  --color2: #f6f6f6;
+  --color1: rgba(0, 0, 0, 0.87);
+  --color2: #eaeaea;
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/
@@ -402,7 +402,7 @@ body {
 }
 
 #show .container {
-  border: 0.1rem solid #000;
+  border: 0.1rem solid var(--color1);
   max-width: 85rem;
   background: #fff;
   position: relative;
@@ -546,33 +546,21 @@ body {
   right: 7.5rem;
 }
 
-@media screen and (max-width: 768px) {
-  html {
-    font-size: 8px;
-  }
-}
-
-@media screen and (max-width: 576px) {
-  html {
-    font-size: 6px;
-  }
-}
-
 /* post create */
 
-#post-create {
+.post-create {
   font-family: Arial, self;
   display: flex;
   background: var(--color2);
 }
 
-#post-create .container {
+.post-create .container {
   display: inline-block;
   margin: 0 auto;
   min-width: 70%;
 }
 
-#post-create .container .post-create-title {
+.post-create .container .post-create-title {
   color: var(--color1);
   font-size: 5rem;
   font-weight: 700;
@@ -580,16 +568,29 @@ body {
   padding: 3rem 0;
 }
 
-#post-create .container form {
+.post-create .container form {
   padding: 5rem 0;
 }
 
-#post-create .container form label {
+.post-create .container form input {
+  margin-left: 0;
+}
+
+.post-create .container form label {
   font-size: 2rem;
   padding: 1.5rem;
 }
 
-#post-create .container form .post-input-style {
+.post-create .container form #post-content {
+  height: 40rem;
+  width: 80%;
+}
+
+.post-create .container form #post-image {
+  margin: 1rem 0 1.5rem 0;
+}
+
+.post-input-style {
   margin: 1rem 0 3.5rem 0;
   width: 50%;
   min-width: 40rem;
@@ -602,24 +603,15 @@ body {
   font-size: 1.6rem;
 }
 
-#post-create .container form #post-content {
-  height: 40rem;
-  width: 80%;
-}
-
-#post-create .container form #post-image {
-  margin: 1rem 0 1.5rem 0;
-}
-
 /* login */
 
 .page-title {
   color: var(--color1);
-  font-size: 5rem;
+  font-size: 6rem;
   font-weight: 700;
   text-align: center;
   padding: 3rem 0;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 form input[type=text],
@@ -709,5 +701,222 @@ form button {
 
 .change-password .container form input {
   width: 35rem;
+}
+
+/* seminar list */
+
+.seminar-list-container {
+  display: flex;
+  background: var(--color2);
+  color: var(--color1);
+  justify-content: center;
+  font-family: Arial, self;
+}
+
+.seminar-list-container .container {
+  width: 90%;
+}
+
+.seminar-list-container .container .seminar-list {
+  text-align: center;
+  padding-bottom: 5rem;
+}
+
+.seminar-list-container .container .seminar-list .seminar-list-item:hover {
+  opacity: 1.5;
+}
+
+.seminar-list-container .container .seminar-list .seminar-list-item {
+  background: #fff;
+  display: inline-block;
+  margin: 1rem;
+  box-shadow: 0px 3px 17px -8px rgba(112, 112, 112, 0.69);
+  text-align: left;
+  text-decoration: none;
+  width: 45rem;
+  height: 60rem;
+  border-radius: 1rem;
+  font-size: 1.8rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.seminar-list-container .container .seminar-list .seminar-list-item a {
+  text-decoration: none;
+  color: var(--color1);
+}
+
+.seminar-list-container .container .seminar-list .seminar-list-item .seminar-item-bg {
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  z-indexx: 2;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 1rem;
+  top: 0;
+  left: 0;
+  transition: all 0.5s;
+}
+
+.seminar-list-container .container .seminar-list .seminar-list-item .seminar-item-bg .seminar-item-read-more {
+  font-size: 4rem;
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.seminar-list-container .container .seminar-list .seminar-list-item .seminar-item-bg:hover {
+  opacity: 1;
+  transition: all 0.5s;
+}
+
+.seminar-list-container .container .seminar-list .seminar-list-item img {
+  width: 100%;
+  height: 25rem;
+  padding: 0;
+  margin: 0;
+  border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+}
+
+.seminar-list-container .container .seminar-list .seminar-list-item .seminar-item-content {
+  padding: 2rem;
+}
+
+.seminar-list-container .container .seminar-list .seminar-list-item .seminar-item-content p {
+  padding: 0.8rem 0;
+}
+
+.seminar-list-container .container .seminar-list .seminar-list-item .seminar-item-about {
+  height: 16rem;
+}
+
+.seminar-list-container .container .seminar-list .seminar-list-item .seminar-item-about:after {
+  content: "....";
+}
+
+.seminar-list-container .container .seminar-list .seminar-list-item .seminar-item-name {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.seminar-list-container .container .seminar-list .seminar-list-item .seminar-item-owner,
+.seminar-list-container .container .seminar-list .seminar-list-item .seminar-item-date,
+.seminar-list-container .container .seminar-list .seminar-list-item .seminar-item-location {
+  font-size: 2rem;
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* Seminar Detail */
+
+.seminar-detail {
+  display: flex;
+  justify-content: center;
+}
+
+.seminar-detail .container {
+  width: 60%;
+  display: inline-block;
+}
+
+.seminar-detail .container .seminar-detail-content {
+  padding: 0.5rem 5rem 4rem 5rem;
+  border: 0.1rem solid var(--color1);
+}
+
+.seminar-detail .container .seminar-detail-content .seminar-detail-name {
+  background: var(--color1);
+  color: var(--color2);
+  font-family: Arial;
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.seminar-detail .container .seminar-detail-content img {
+  width: 100%;
+}
+
+.seminar-detail .container .seminar-detail-content .seminar-detail-about {
+  font-size: 2rem;
+  line-height: 3rem;
+  padding: 1rem 0;
+}
+
+.seminar-detail .container .seminar-detail-content .seminar-detail-owner,
+.seminar-detail .container .seminar-detail-content .seminar-detail-date,
+.seminar-detail .container .seminar-detail-content .seminar-detail-location {
+  font-size: 2.5rem;
+  font-style: italic;
+  font-weight: bold;
+  padding: 1rem 0;
+}
+
+.seminar-detail .container .seminar-detail-content .shadow-map {
+  width: 100%;
+  height: 30rem;
+}
+
+/* Seminar Create */
+
+.seminar-create {
+  display: flex;
+  justify-content: center;
+}
+
+.seminar-create .container {
+  width: 80%;
+  padding: 0 5rem;
+}
+
+.seminar-create .container form {
+  padding-bottom: 4rem;
+}
+
+.seminar-create .container form label {
+  font-size: 2.5rem;
+  padding-left: 3rem;
+}
+
+.seminar-create .container form input {
+  width: 40rem;
+}
+
+.seminar-create .container form input[type=file] {
+  margin: 1rem 2rem;
+}
+
+.seminar-create .container form textarea {
+  margin-left: 2rem;
+  width: 50rem;
+  height: 15rem;
+}
+
+.seminar-create .container form button {
+  margin-left: 2rem;
+}
+
+@media screen and (max-width: 992px) {
+  html {
+    font-size: 9px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 8px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  html {
+    font-size: 6px;
+  }
 }
 

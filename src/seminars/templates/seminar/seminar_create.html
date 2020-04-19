@@ -1,0 +1,28 @@
+{% extends 'post/layout.html' %}
+
+{% block tittle %}
+    Seminar list
+{% endblock %}
+
+{% block content %}
+
+<div class="seminar-create">
+    <div class="container">
+        <h1 class="page-title">Seminar Create</h1>
+        <form action="">
+            <label for="seminar-create-name">Seminar Name:</label><br>
+            <input type="text" id="seminar-create-name" placeholder = "Seminar Name"><br>
+            <label for="seminar-create-date">Date:</label><br>
+            <input type="text" id="seminar-create-date" placeholder="Date"><br>
+            <label for="seminar-create-location">Location:</label><br>
+            <input type="text" id="seminar-create-location" placeholder="Location"><br>
+            <label for="seminar-create-image">Image:</label><br>
+            <input type="file" id="seminar-create-image"><br>
+            <label for="seminar-create-about">Seminar About:</label><br>
+            <textarea name="" id="seminar-create-about" class = "post-input-style" placeholder="About..."></textarea><br>
+            <button>Create</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
