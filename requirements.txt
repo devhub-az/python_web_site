@@ -1,5 +1,5 @@
 asgiref==3.2.10
-Django==3.0.7
+Django==3.0.8
 django-crispy-forms==1.9.1
 django-debugtools==1.8
 django-environ==0.4.5
