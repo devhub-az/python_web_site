@@ -31,37 +31,7 @@ Used: Python Django, Docker, NPM (Yarn), Postgresql
 
 ## Contributors ✨
 
-<table>
-<tr>
-    <td align="center">
-        <a href="https://github.com/hose1021">
-        <img src="https://avatars.githubusercontent.com/u/30587167?v=3" title="ngryman" width="80" height="80"> <br> Hose1021</a>
-    </td>
-    <td align="center">
-        <a href="https://github.com/huseynovfuad"><img src="https://avatars.githubusercontent.com/u/55555038?v=3" title="ngryman" width="80" height="80"> <br> huseynovfuad</a>
-    </td>
-    <td align="center">
-        <a href="https://github.com/anvarliorxan"><img src="https://avatars.githubusercontent.com/u/57799824?v=3" title="ngryman" width="80" height="80"> <br> anvarliorxan</a>
-    </td>
-    <td align="center">
-        <a href="https://github.com/dilaisayeva"><img src="https://avatars.githubusercontent.com/u/52045311?v=3" title="ngryman" width="80" height="80"> <br> dilaisayeva</a>
-    </td>
-    <td align="center">
-        <a href="https://github.com/akernelpanicv"><img src="https://avatars.githubusercontent.com/u/54182599?v=3" title="ngryman" width="80" height="80"> <br> akernelpanicv</a>
-    </td>
-    <td align="center">
-        <a href="https://github.com/ch4ki"><img src="https://avatars.githubusercontent.com/u/19760199?v=3" title="ngryman" width="80" height="80"> <br> ch4ki</a>
-    </td>
-</tr>
-<tr>
-    <td align="center">
-        <a href="https://github.com/VuqarTagiyev"><img src="https://avatars.githubusercontent.com/u/54220406?v=3" title="ngryman" width="80" height="80"> <br> VuqarTagiyev</a>
-    </td>
-    <td align="center">
-        <a href="https://github.com/nasirmovlamov"><img src="https://avatars.githubusercontent.com/u/60513066?v=3" title="ngryman" width="80" height="80"> <br> nasirmovlamov</a>
-    </td>
-</tr>
-</table>
+[![contributors](https://badges.implements.io/api/contributors?org=DevHub-Azerbaycan&repo=python_web_site&width=1280&size=180&padding=1&type=jpeg)](https://github.com/DevHub-Azerbaycan/python_web_site/graphs/contributors)
 
 ## LICENSE
 
