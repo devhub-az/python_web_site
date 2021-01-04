@@ -8,7 +8,7 @@ django-webpack-loader==0.7.0
 djangomix==1.1.3
 djangorestframework==3.12.2
 Faker==5.1.0
-Pillow==8.0.1
+Pillow==8.1.0
 psycopg2==2.8.6
 psycopg2-binary==2.8.6
 python-dateutil==2.8.1
